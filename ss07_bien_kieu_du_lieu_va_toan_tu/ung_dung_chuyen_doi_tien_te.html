@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chuyen doi tien </title>
+</head>
+
+<body>
+<h1>Ung dung chuyen doi tien te</h1>
+<label><h4>Amount:</h4></label>
+<input id="amount" type="number">
+
+<label><h4>From Currency:</h4></label>
+<select id="fromCurrency">
+    <option value="VND">VietNam</option>
+    <option value="USD">My</option>
+    <option value="EUR">ChauAu</option>
+    <option value="GBP">Anh</option>
+</select>
+
+
+<label><h4>To Currency:</h4></label>
+<select id="toCurrency">
+    <option value="USD">My</option>
+    <option value="EUR">ChauAu</option>
+    <option value="GBP">Anh</option>
+    <option value="JPY">Nhat</option>
+</select>
+<br>
+<br>
+
+
+<button onclick="convertCurrency()">Convert</button>
+<br>
+<br>
+
+<p id="result"></p>
+<script >
+    function convertCurrency() {
+
+        let fromCurrency = document.getElementById("fromCurrency").value;
+        let toCurrency = document.getElementById("toCurrency").value;
+        let amount = document.getElementById("amount").value;
+        let url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+                let rate = data.rates[toCurrency];
+                let result = amount * rate;
+                document.getElementById("result").innerHTML = "Result:"+ result +" "+ toCurrency;
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+</script>
+</body>
+</html>
