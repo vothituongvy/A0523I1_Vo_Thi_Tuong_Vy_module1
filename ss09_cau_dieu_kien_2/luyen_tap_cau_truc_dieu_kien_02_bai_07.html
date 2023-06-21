@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 07</title>
+</head>
+<body>
+    <script>
+        let numberA=parseFloat(prompt("Nhập a"));
+        let numberB=parseFloat(prompt("Nhập b"));
+        let numberC=parseFloat(prompt("Nhập c"));
+        let denTa=numberB*numberB-4*numberA*numberC;
+        if(numberA==0){
+            let numberX=-(numberC/numberB);
+            if(numberB==0){
+                if(numberC==0){
+                    document.write("Vô số nghiệm");
+                }else{
+                    document.write("Vô nghiệm");
+                }
+            }else{
+                document.write("Nghiệm x= "+ numberX);
+            }
+        }else{
+            if(denTa<0){
+                document.write("Vô nghiệm");
+            }else if(denTa=0){
+                let numberx=-numberB/(2*numberA);
+                document.write("Nghiệm kép"+numberx);
+            }else {
+                let numberXMot=(-numberB+Math.abs(denTa))/(2*numberA);
+                let numberXHai=(-numberB-Math.abs(denTa))/(2*numberA);
+                document.write("Nghiệm "+numberXMot+"và"+numberXHai);
+            }
+        }
+    </script>
+</body>
+</html>

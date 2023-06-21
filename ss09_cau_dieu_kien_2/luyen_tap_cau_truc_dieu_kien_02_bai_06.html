@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 06</title>
+</head>
+<body>
+    <script>
+        let numberA=parseFloat(prompt("Nhập a"));
+        let numberB=parseFloat(prompt("Nhập b"));
+        let numberX=-(numberB/numberA);
+        if(numberA==0){
+            if(numberB==0){
+                document.write("Vô số nghiệm");
+            }else{
+                document.write("Vô nghiệm");
+            }
+        }else{
+            document.write("Nghiệm x= "+ numberX);
+        }
+    </script>
+</body>
+</html>
