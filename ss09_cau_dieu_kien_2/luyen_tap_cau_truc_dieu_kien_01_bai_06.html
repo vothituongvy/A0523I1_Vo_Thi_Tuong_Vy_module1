@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 06</title>
+</head>
+<body>
+    <script>
+        let doanhSo=parseFloat(prompt("Nhập doanh số bán hàng(triệu):"));
+        let hoaHong;
+        if(doanhSo<400){
+            document.write("Doanh số không đủ để được hoa hồng");
+        }else if(doanhSo>=400 && doanhSo <600){
+            hoaHong=doanhSo*1/100;
+            document.write("Hoa hồng là:"+hoaHong+"triệu");
+        }else if(doanhSo>=600 && doanhSo<800){
+            hoaHong=doanhSo*1.5/100;
+            document.write("Hoa hồng là:"+hoaHong+"triệu");
+        }else if(doanhSo==800){
+            hoaHong=doanhSo*2/100;
+            document.write("Hoa hồng là:"+hoaHong+"triệu");
+        }else {
+            hoaHong=doanhSo*3/100;
+            document.write("Hoa hồng là:"+hoaHong+"triệu");
+        }
+    </script>
+</body>
+</html>

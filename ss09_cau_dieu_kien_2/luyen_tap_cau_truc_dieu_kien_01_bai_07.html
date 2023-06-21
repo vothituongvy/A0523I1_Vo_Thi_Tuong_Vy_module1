@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 07</title>
+</head>
+<body>
+    <script>
+
+        let soPhut=parseFloat(prompt("Số phút gọi trong tháng"));
+        let phi;
+        if(soPhut>200){
+            phi=(soPhut-200)*200+150*400+50*600;
+            document.write("Cước điện thoại là:"+phi);
+        }else if(soPhut>50){
+            phi=(soPhut-50)*400+50*600;
+            document.write("Cước điện thoại là:"+phi);
+        }else{
+            phi=soPhut*600;
+            document.write("Cước điện thoại là:"+phi);
+        }
+    </script>
+</body>
+</html>
