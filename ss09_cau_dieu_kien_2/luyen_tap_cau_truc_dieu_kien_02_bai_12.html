@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 12</title>
+</head>
+<body>
+    <script>
+        let tienBanDau=parseFloat(prompt("Tien ban dau:(trieu)"));
+        let soThang=parseFloat(prompt("So thang da gui(thang)"));
+        let laiXuat=parseFloat(prompt("Lai xuat(%)"));
+        let tienLai;
+        if(soThang<0.2){
+            tienLai=(tienBanDau*Math.pow(1+((laiXuat)/100/365),365*soThang))-tienBanDau;
+            document.write("Tien lai la:"+tienLai+"trieu");
+        }else if(soThang<1){
+            tienLai=(tienBanDau*Math.pow(1+((laiXuat)/100/52),52*soThang))-tienBanDau;
+            document.write("Tien lai la:"+tienLai+"trieu");
+        }else if(soThang<12){
+            tienLai=(tienBanDau*Math.pow(1+((laiXuat)/100/12),12*soThang))-tienBanDau;
+            document.write("Tien lai la:"+tienLai+"trieu");
+        }else {
+            tienLai=(tienBanDau*Math.pow(1+(laiXuat/100),soThang))-tienBanDau;
+            document.write("Tien lai la:"+tienLai+"trieu");
+        }
+    </script>
+</body>
+</html>

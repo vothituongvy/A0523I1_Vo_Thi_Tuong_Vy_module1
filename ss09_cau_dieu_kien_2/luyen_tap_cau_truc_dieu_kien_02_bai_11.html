@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 11</title>
+</head>
+<body>
+    <script>
+        let tienLuong=parseFloat(prompt("Nhap tien luong (trieu)"));
+        let thoiGianCuTru=parseFloat(prompt("Nhap thoi gian cu tru(thang)"));
+        let thueThuNhap;
+        if(thoiGianCuTru>=3){
+            if(tienLuong>80) {
+                thueThuNhap = (tienLuong - 80) * 35 /100 +28 * 30 /100 +20 * 25 /100 +14 * 20 /100 +8 * 15 /100 +5 * 10 /100+ 5 * 5/100;
+                document.write("Thue thu nhap la:" + thueThuNhap);
+            }else if(tienLuong>52 && tienLuong<=80 ){
+                thueThuNhap = (tienLuong-52) * 30 /100 +20 * 25/100 % +14 * 20 /100 +8 * 15 /100 +5 * 10 /100+ 5 * 5/100;
+                document.write("Thue thu nhap la:" + thueThuNhap);
+            }else if(tienLuong>32 && tienLuong<=52){
+                thueThuNhap = (tienLuong -32) * 25 /100 +14 * 20 /100 +8 * 15 /100 +5 * 10/100 + 5 * 5/100;
+                document.write("Thue thu nhap la:" + thueThuNhap);
+            }else if(tienLuong>18 && tienLuong<=32){
+                thueThuNhap = (tienLuong -18) * 20 /100 +8 * 15 /100 +5 * 10/100 + 5 * 5/100;
+                document.write("Thue thu nhap la:" + thueThuNhap);
+            }else if(tienLuong>10 && tienLuong>=18){
+                thueThuNhap = (tienLuong - 10)* 15 /100 +5 * 10 /100+ 5 * 5/100;
+                document.write("Thue thu nhap la:" + thueThuNhap);
+            }else if(tienLuong>5 && tienLuong<=10){
+                thueThuNhap = (tienLuong - 5) * 10/100+ 5 * 5/100;
+                document.write("Thue thu nhap la:" + thueThuNhap);
+            }else{
+                thueThuNhap = tienLuong * 5/100;
+                document.write("Thue thu nhap la:" + thueThuNhap);
+            }
+        }else{
+            thueThuNhap = tienLuong* 20/100 ;
+            document.write("Thue thu nhap la:" + thueThuNhap);
+        }
+    </script>
+</body>
+</html>

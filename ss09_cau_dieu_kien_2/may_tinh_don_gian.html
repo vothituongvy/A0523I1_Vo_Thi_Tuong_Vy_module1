@@ -1,204 +1,113 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ung dung may tinh</title>
+    <meta charset="UTF-8">
+    <title>may tinh don </title>
     <style>
-        #calculator {
-            width: 300px;
-            margin: 20px auto;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-        }
-
-        #result {
-            background-color: transparent;
-            border: none;
-            font-family: "Google Sans", sans-serif;
-            font-size: 2.6em;
-            height: 60px;
-            padding: 0 20px;
-            text-align: right;
-            width: 90%;
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .row button {
-            background-color: red;
-            border: none;
-            font-family: "Google Sans", sans-serif;
-            font-size: 1.6em;
-            height: 60px;
-            width: 25%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .row button:hover {
-            background-color: #f1f1f1;
-        }
-
-        .row button:active {
-            background-color: #e6e6e6;
-        }
-
-        .operation {
-            background-color: #f1f1f1;
-            font-size: 1.6em;
-            font-weight: bold;
-        }
-
-        .numeric {
-            color: white;
-            background-color: #444444;
-        }
-
-        .equal {
-            color: #ffffff;
-            background-color: #ffffff;
-            border-radius: 0 5px 5px 0;
-        }
-
-        .no-right-radius {
-            border-radius: 5px 0 0 5px;
+        button {
+            width: 50px;
+            height: 50px;
         }
     </style>
 </head>
-
 <body>
-<div id="calculator">
-    <input type="text" id="result" placeholder="0" readonly>
+<table border="1" cellpadding="0" cellspacing="20">
+    <tr>
+        <td colspan="4" style="height: 30px; text-align: right">
+            <span id="result"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="calBasic('1')">1</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('2')">2</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('3')">3</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('+')">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="calBasic('4')">4</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('5')">5</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('6')">6</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('-')">-</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="calBasic('7')">7</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('8')">8</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('9')">9</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('*')">X</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="calBasic('c')">C</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('0')">0</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('=')">=</button>
+        </td>
+        <td>
+            <button type="button" onclick="calBasic('/')">/</button>
+        </td>
+    </tr>
+</table>
 
-
-    <div class="row">
-        <button class="numeric">1</button>
-        <button class="numeric">2</button>
-        <button class="numeric">3</button>
-        <button class="operation">+</button>
-    </div>
-
-    <div class="row">
-        <button class="numeric">4</button>
-        <button class="numeric">5</button>
-        <button class="numeric">6</button>
-        <button class="operation">-</button>
-    </div>
-
-    <div class="row">
-        <button class="numeric">7</button>
-        <button class="numeric">8</button>
-        <button class="numeric">9</button>
-        <button class="operation">X</button>
-    </div>
-
-    <div class="row">
-        <button class="no-right-radius operation">C</button>
-        <button class="numeric no-right-radius">0</button>
-        <button class="equal">=</button>
-        <button class="operation">/</button>
-    </div>
-</div>
 
 <script>
-    const calculator = document.getElementById("calculator");
-    const result = document.getElementById("result");
 
-    let previousOperand = "";
-    let currentOperand = "";
-    let operation;
-
-    function appendNumber(number) {
-        if (number === "." && currentOperand.includes(".")) return;
-        currentOperand += number;
-    }
-
-    function chooseOperation(op) {
-        if (currentOperand === "") return;
-        if (previousOperand !== "") {
-            compute();
+    function calBasic(x) {
+        let result = document.getElementById('result').innerText;
+        switch (x) {
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+            case '+':
+            case '-':
+            case '*':
+            case '/':
+                //TH1 nối chuỗi
+                result = result + x;
+                break;
+            case '=':
+                //TH2 tính toán =
+                result = eval(result);
+                break;
+            case 'c':
+                //TH3 xóa C
+                result = '';
+                break;
         }
-        operation = op;
-        previousOperand = currentOperand;
-        currentOperand = "";
+        document.getElementById('result').innerText = result;
     }
-
-    function compute() {
-        let computation;
-        const prev = parseFloat(previousOperand);
-        const current = parseFloat(currentOperand);
-        if (isNaN(prev) || isNaN(current)) return;
-        switch (operation) {
-            case "+":
-                computation = prev + current;
-                break;
-            case "-":
-                computation = prev - current;
-                break;
-            case "X":
-                computation = prev * current;
-                break;
-            case "/":
-                computation = prev / current;
-                break;
-            default:
-                return;
-        }
-        currentOperand = computation.toFixed(2).toString();
-        operation = undefined;
-        previousOperand = "";
-    }
-
-    function clear() {
-        previousOperand = "";
-        currentOperand = "";
-        operation = undefined;
-    }
-
-    const numberButtons = document.querySelectorAll(".numeric");
-    numberButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            appendNumber(button.textContent);
-            updateDisplay();
-        });
-    });
-
-    const operationButtons = document.querySelectorAll(".operation");
-    operationButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            chooseOperation(button.textContent);
-            updateDisplay();
-        });
-    });
-
-    document.querySelector(".equal").addEventListener("click", () => {
-        compute();
-        updateDisplay();
-    });
-
-    document.querySelector(".no-right-radius").addEventListener("click", () => {
-        if (currentOperand.length === 0) return;
-        currentOperand = currentOperand.slice(0, -1);
-        updateDisplay();
-    });
-
-    document.querySelector(".operation:nth-of-type(1)").addEventListener("click", () => {
-        clear();
-        updateDisplay();
-    });
-
-    function updateDisplay() {
-        result.value = currentOperand === "" ? "0" : currentOperand;
-    }
-
-
 </script>
 </body>
 </html>
