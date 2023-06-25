@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinh Bang Cuu CHuong</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bảng Cửu Chương</h1>
+    <table id="bangcuuchuong"></table>
+    <script>
+        var bangCuuChuong = document.getElementById("bangcuuchuong");
+        for(var i=2;i<=9;i++){
+            var row=document.createElement("td");
+            //document.createElement() có ngĩa tạo 1 phần tử HTML mới bằng javascript
+            for(var j=1;j<=9;j++){
+             var cell=document.createElement("tr");
+             var myString=i+"x"+j+"=";
+             cell.innerHTML=myString+i*j;
+             row.appendChild(cell);
+             //Thêm đối tượng  vào cột hàng
+            }
+            bangCuuChuong.appendChild(row);
+        }
+    </script>
+</body>
+</html>

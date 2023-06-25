@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So Nguyen To</title>
+<body>
+    <label for="input-number">Nhập số lượng số nguyên tố:</label>
+    <input type="number" id="input-number">
+    <button onclick="displayPrimeNumbers()">Hiển thị</button>
+    <div id="prime-numbers"></div>
+
+<script>
+    function isPrime(number) {
+        if (number < 2) {
+            return false;
+        }
+
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function displayPrimeNumbers() {
+        var count = 0;
+        var number = 2;
+        var n = parseInt(document.getElementById("input-number").value);
+        var output = document.getElementById("prime-numbers");
+
+        output.innerHTML = "";
+
+        while (count < n) {
+            if (isPrime(number)) {
+                var element = document.createElement("p");
+                element.innerHTML = number;
+                output.appendChild(element);
+                count++;
+            }
+
+            number++;
+        }
+    }
+</script>
+</body>
+</html>
