@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 08</title>
+</head>
+<body>
+<button onclick="game()"id="play"><h1>Chơi</h1></button>
+    <script>
+        function game() {
+            let d=+prompt("Nhap khoang muon doan:");
+            let check=Math.floor(Math.random()*d);
+            let count=0;
+            do{
+                let number=+prompt("Mời bạn đoán số");
+                if(number===check){
+                    alert("Correct!");
+                    break;
+                }
+                else{
+                    count++;
+                    if(number<check){
+                        alert("Số này bé hơn");
+                    }
+                    else if(number>check){
+                        alert("Số này lớn hơn");
+                    }
+                    if(count<3) {
+                        alert("Mời Bạn Thử lại!");
+                    }
+                }
+            }while (count<=3);
+            alert("Trò chơi kết thúc");
+        }
+    </script>
+</body>
+</html>
