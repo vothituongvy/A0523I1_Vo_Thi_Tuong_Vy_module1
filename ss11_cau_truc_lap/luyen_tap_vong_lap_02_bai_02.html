@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 02</title>
+</head>
+<body>
+    <script>
+        var n=parseInt(prompt("Nhập vào số nguyên dương muốn tính giai thừa:"));
+        while (n<0) {
+                n=parseInt(prompt("Nhập lại:"));
+            }
+        function tinhGiaiThua(n) {
+            let giaiThua = 1;
+            for (let i = 1; i <= n; i++) {
+                giaiThua *= i;
+            }
+            return giaiThua;
+        }document.write(n+"!="+tinhGiaiThua(n));
+    </script>
+</body>
+</html>

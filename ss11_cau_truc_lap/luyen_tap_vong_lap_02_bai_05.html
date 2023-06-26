@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 05</title>
+</head>
+<body>
+    <script>
+
+        var soTienBanDau=parseFloat(prompt("Nhap so tien ban dau:"));
+        var soThangChoVay=parseFloat(prompt("Nhap so thang cho vay:"));
+        var laiXuatHangThang=parseFloat(prompt("Nhap lai xuat hang thang:"));
+            let tongTienLai = 0;
+            for (let i = 1; i <= soThangChoVay; i++) {
+                let tienLaiThang = soTienBanDau * (laiXuatHangThang / 100);
+                tongTienLai += tienLaiThang;
+                soTienBanDau += tienLaiThang;
+            }
+        document.write("Lai ngan hang la:"+tongTienLai);
+
+    </script>
+</body>
+</html>
