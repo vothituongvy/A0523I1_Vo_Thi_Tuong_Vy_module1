@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu dien</title>
+</head>
+<body>
+    <h1>Tra cứu từ điển Anh-Việt</h1>
+    <input type="text" id="searchInput" placeholder="Nhập từ tiếng Anh">
+    <button onclick="search()">Tra cứu</button>
+    <p id="result"></p>
+    <script>
+        var englishWords = ["hello", "goodbye", "house", "cat", "dog"];
+        var vietnameseWords = ["xin chào", "tạm biệt", "nhà", "mèo", "chó"];
+        function search() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var index = englishWords.indexOf(input);
+            if (index !== -1) {
+                var translation = vietnameseWords[index];
+                document.getElementById("result").textContent = translation;
+            } else {
+                document.getElementById("result").textContent = "Không tìm thấy từ "+englishWords+" trong từ điển.";
+            }
+        }
+    </script>
+</body>
+</html>
