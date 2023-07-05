@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 02</title>
+</head>
+<body>
+<script>
+    var numbers=[1,4,0,-5,7,-100,5000,40000,6,10];
+    var index=0;
+    var max=numbers[0];
+    for(var i=1;i<numbers.length;i++){
+        if(numbers[i]>max){
+            max=numbers[i];
+            index=i;
+        }
+    }
+    document.write("Phần từ lớn nhất là:"+max+"</br>");
+    document.write("Vị trí phần từ lớn nhất là:"+index);
+</script>
+</body>
+</html>

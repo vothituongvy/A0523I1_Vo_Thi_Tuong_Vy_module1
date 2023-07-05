@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 03</title>
+</head>
+<body>
+    <script>
+        var numbers=[10,1,2,9,8,6,10000,-5,-9000,0];
+        var max=numbers[0];
+        var sum=0;
+        for(var i=1;i<numbers.length;i++){
+            sum=sum+numbers[i];
+            if(numbers[i]>max){
+                max=numbers[i];
+            }
+        }
+        var average=sum/(numbers.length);
+        document.write("Phần tử lớn nhất là:"+max+"</br>");
+        document.write("Gias trị trung bình của mảng:"+average);
+    </script>
+</body>
+</html>
