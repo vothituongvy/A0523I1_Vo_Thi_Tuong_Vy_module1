@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 06</title>
+</head>
+<body>
+<script>
+    var arr= prompt("Nhập mảng ký tự: ").split("");
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === "-") {
+            arr[i] = "_";
+        }
+    }
+    var chuyenMang= arr.join("");
+    document.write("Mảng sau khi thay thế: " +chuyenMang);
+
+</script>
+</body>
+</html>
