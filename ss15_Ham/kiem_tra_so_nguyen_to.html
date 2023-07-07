@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem Tra So Nguyen To</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        if (number < 2) {
+            return false;
+        }
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    var count =0;
+    var number=2;
+    while (count<10000){
+        if(isPrime(number)){
+            count++;
+        }
+        number++;
+        document.write(number+"</br>");
+    }
+
+</script>
+</body>
+</html>
