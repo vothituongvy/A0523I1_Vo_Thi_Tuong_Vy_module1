@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 07</title>
+</head>
+<body>
+<script>
+    function doiCho() {
+    var num1=parseInt(prompt("Nhập vào số thứ nhất:"));
+    var num2=parseInt(prompt("Nhập vào số thứ hai:"));
+    document.write("Số thứ nhất là:"+num1+"</br>"+"Số thứ hai là:"+num2+"</br>");
+    var num=num1;
+    num1=num2;
+    num2=num;
+    document.write("Số thứ nhất đã đổi là:" +num1+"</br>"+"Số thứ hai đã đỗi là:"+ num2);
+    }
+    doiCho();
+</script>
+</body>
+</html>

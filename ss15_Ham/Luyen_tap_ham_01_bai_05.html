@@ -6,7 +6,29 @@
 </head>
 <body>
 <script>
-    
+    var stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    var constellations = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function findConstellation(starName) {
+        for (var i = 0; i < stars.length; i++) {
+            if (stars[i] === starName) {
+                return constellations[i];
+            }
+        }
+        return "Không tìm thấy ngôi sao";
+    }
+
+
+        var input = prompt("Nhập tên ngôi sao: ");
+
+        var result = findConstellation(input);
+
+        if (result === "Không tìm thấy ngôi sao") {
+            alert(result);
+        } else {
+            alert("Tên chòm sao tương ứng là: " + result);
+        }
+
 </script>
 </body>
 </html>

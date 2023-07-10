@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 03</title>
+</head>
+<body>
+<script>
+    var number=+prompt("Nhập số muốn tính giai thừa");
+    function tinhGiaiThua() {
+            var giaiThua=1;
+            for(var i=1;i<=number;i++){
+                giaiThua*=i;
+            }
+            return giaiThua;
+    }
+            document.write("Giai thừa của " + number+ " là:"+tinhGiaiThua());
+</script>
+</body>
+</html>

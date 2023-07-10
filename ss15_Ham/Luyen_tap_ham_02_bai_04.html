@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 04</title>
+</head>
+<body>
+<script>
+    var kiTu=prompt("Nhập vào kí tự:");
+    function kiemTraKiTu() {
+        var result =!isNaN(parseFloat(kiTu))&&isFinite(kiTu);
+        if(result){
+            document.write(kiTu+" Là Ký tự số");
+        }else{
+            document.write(kiTu+" Không là ký tự số");
+        }
+    }
+    kiemTraKiTu();
+</script>
+</body>
+</html>

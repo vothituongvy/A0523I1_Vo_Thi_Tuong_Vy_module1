@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 02</title>
+</head>
+<body>
+<script>
+    var banKinh=+prompt("Nhập bán kính hình tròn:");
+    function tinhDienTich() {
+        var dienTich= Math.PI*Math.pow(banKinh,2);
+        return dienTich;
+    }
+    function tinhChuVi() {
+          var  chuVi=2*Math.PI*banKinh;
+          return chuVi;
+    }
+    document.write("Diện tích hình tròn là:"+tinhDienTich()+"</br>");
+    document.write("Chu Vi hình tròn là:"+tinhChuVi());
+</script>
+</body>
+</html>
