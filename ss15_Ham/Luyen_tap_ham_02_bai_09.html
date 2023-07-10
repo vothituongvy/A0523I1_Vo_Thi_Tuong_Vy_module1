@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 09</title>
+</head>
+<body>
+<script>
+    function countCharacter(arr,kiTu) {
+        var count = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] ===kiTu) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            return count;
+        } else {
+            return -1;
+        }
+    }
+    var char = ['a', 'b', 'c', 'b', 'a'];
+    var charCount = countCharacter(char,'b');
+    document.write("Số lần xuất hiện là:"+charCount);
+
+</script>
+</body>
+</html>
