@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <canvas id="myRectangle"width="200"height="100"style="border: 1px solid #000000;"></canvas>
+        </body>
+        <script>
+        class Rectangle{
+            constructor(height,width) {
+                this.height=height;
+                this.width=width;
+            }
+            calculatePerimeter(){
+                return (this.width + this .width)*2;
+            }
+            calculateArea(){
+                return this.width * this .height;
+            }
+            showInformation(){
+                return "<br>Chiều dài hình chữ nhật :" + this.width
+                    +"<br>Chiều rộng hình chữ nhật :" + this.height
+                    +"<br>Chu vi hình chữ nhật :"+this.calculatePerimeter()
+                    +"<br>Diện tích hình chữ nhật : "+this.calculateArea();
+            }
+        }
+    let inputHeight=+prompt("Nhập chiều rộng:");
+    let inputWidth=+prompt("Nhập chiều dài:");
+    let rectangle=new Rectangle(inputHeight,inputWidth);
+
+    document.write(rectangle.showInformation());
+</script>
+</body>
+</html>

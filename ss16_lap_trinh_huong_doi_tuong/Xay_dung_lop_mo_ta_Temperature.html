@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+    class ConvertTemperature{
+        constructor(doC) {
+            this.doC=doC;
+        }
+        covertFahrenheit(){
+            return (9/5 * this.doC + 32);
+        }
+        convertKevin(){
+            return this.doC + 273.15 ;
+        }
+        showInformation(){
+            return "Độ C:"+this.doC+"<br>"+"Chuyển đổi C sang F:"+this.covertFahrenheit()+
+                "<br> chuyển đổi độ C sang Kevin:"+this.convertKevin();
+        }
+    }
+    let C=+prompt("Nhập độ C:");
+    let convert=new ConvertTemperature(C);
+    document.write(convert.showInformation());
+</script>
+</body>
+</html>
