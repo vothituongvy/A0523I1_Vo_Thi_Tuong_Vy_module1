@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<button type="button"id="btn">Turn On</button>
+<button type="button"id="btn1">Turn Off</button>
+<body>
+</body>
+<script>
+
+    class Battery{
+        setEnergy(energy){
+            this.energy=energy;
+        }
+        getEnergy(){
+            return this.energy;
+        }
+        decreaseEnergy(){
+            if(this.energy>0){
+                this.energy--;
+            }
+        }
+    }
+
+    class FlashLamp{
+        setBattery(){
+            this.battergy=battery;
+        }
+        getBatteryInfo(){
+            return this.battergy.getEnergy();
+        }
+        light(){
+            if(this.status){
+                alert("Lighting");
+            }else{
+                alert("Not Lighting");
+            }
+        }
+        turnOn(){
+            this.status=true;
+        }
+        turnOff(){
+            this.status=false;
+        }
+    }
+    let img;
+    let battery=new Battery();
+    battery.setEnergy(10);
+    let flashLamp=new FlashLamp();
+    flashLamp.setBattery(battery);
+    document.getElementById('btn').addEventListener('click',() => {
+        flashLamp.turnOn();
+        flashLamp.light();
+    })
+    document.getElementById('btn1').addEventListener('click',()=>{
+        flashLamp.turnOff();
+        flashLamp.light();
+    })
+
+</script>
+</html>
