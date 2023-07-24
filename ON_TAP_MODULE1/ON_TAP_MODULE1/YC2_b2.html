@@ -6,23 +6,27 @@
 </head>
 <body>
 <script>
-    function tamGiacCanRong() {
-        let h = prompt("Nhập h :");
-        let a = h, b = h;
-        for(let i =1; i <= h ; i++){
-            for(let j = 1; j <= 2*h -1; j++){
-                if( i == h || j == a || j == b){
-                    document.write("* ");
-                }else {
-                    document.write("&nbsp;&nbsp;&nbsp;");
-                }
+    function veTamGiacCan(h) {
+        // Vẽ từng dòng của tam giác
+        for (let i = 1; i <= h; i++) {
+
+            // Thêm khoảng trắng trước mỗi dòng
+            for (let j = 1; j <= h - i; j++) {
+                document.write("&nbsp;&nbsp;&nbsp;");
             }
-            a--;
-            b++;
+
+            // Thêm dấu * ở vị trí thích hợp
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                document.write("* ");
+            }
+
             document.write("</br>");
         }
     }
-    tamGiacCanRong();
+
+    // Nhập chiều cao từ người dùng và vẽ tam giác
+    let h = prompt("Nhập chiều cao của tam giác:");
+    veTamGiacCan(h);
 </script>
 </body>
 </html>
