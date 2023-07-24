@@ -6,24 +6,23 @@
 </head>
 <body>
 <script>
-        let height=prompt("Nhập vào chiều cao");
-        let tamGiac = '';
-        for (let i = 1; i <= height; i++) {
-            for (let j = 1; j <= height - i; j++) {
-                tamGiac += ' ';
-            }
-            for (let k = 1; k <= 2 * i - 1; k++) {
-                if (k === 1 || k === 2 * i - 1 || i === height) {
-                    tamGiac += '*';
+
+    function veTamGiacVuongCan(height) {
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j <= i; j++) {
+                if (j === 0 || j === i || i === height - 1) {
+                    document.write('* ');
                 } else {
-                    tamGiac += ' ';
+                    document.write("&nbsp;&nbsp;&nbsp;");
                 }
             }
-            tamGiac += '\n';
+            document.write("</br>");
         }
-        document.write(tamGiac);
-
+    }
+    var height=prompt("Nhập chiều cao:");
     // Gọi hàm để vẽ tam giác
+    veTamGiacVuongCan(height);
+
 
 </script>
 </body>
