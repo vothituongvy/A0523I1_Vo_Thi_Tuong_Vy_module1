@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B1</title>
+</head>
+<body>
+<script>
+    var luong=prompt("Nhập vào lương nhân viên(triệu):");
+    var thueThuNhap;
+    var luongRong;
+    if(luong>=15){
+        thueThuNhap=20/100*luong;
+    }else if(luong>=7 && luong<15){
+        thueThuNhap=10/100*luong;
+    }else{
+        thueThuNhap=5/100*luong;
+    }
+        luongRong=luong-thueThuNhap;
+        document.write("Thuế thu nhập là:"+thueThuNhap+" triệu </br>");
+        document.write("Lương ròng"+luongRong+ " triệu");
+
+</script>
+</body>
+</html>
