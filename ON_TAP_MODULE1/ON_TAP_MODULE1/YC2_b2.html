@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tamGiacCanRong() {
+        let h = prompt("Nhập h :");
+        let a = h, b = h;
+        for(let i =1; i <= h ; i++){
+            for(let j = 1; j <= 2*h -1; j++){
+                if( i == h || j == a || j == b){
+                    document.write("* ");
+                }else {
+                    document.write("&nbsp;&nbsp;&nbsp;");
+                }
+            }
+            a--;
+            b++;
+            document.write("</br>");
+        }
+    }
+    tamGiacCanRong();
+</script>
+</body>
+</html>
