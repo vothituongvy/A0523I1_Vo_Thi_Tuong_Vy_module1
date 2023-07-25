@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let menu = {
+      1: { name: "Cafe", price: 20000 },
+      2: { name: "Cam vắt", price: 25000 },
+      3: { name: "Nước ép cà rốt", price: 30000 },
+      4: { name: "Nước ép cà chua", price: 30000 },
+      5: { name: "Nước lọc", price: 10000 },
+      6: { name: "Nước dừa", price: 15000 },
+  };
+
+  let total = 0;
+
+  console.log("Danh sách các loại thức uống:");
+  console.log("1. Cafe");
+  console.log("2. Cam vắt");
+  console.log("3. Nước ép cà rốt");
+  console.log("4. Nước ép cà chua");
+  console.log("5. Nước lọc");
+  console.log("6. Nước dừa");
+  console.log("7. Thoát gọi món");
+
+  let choice = 0;
+
+  do {
+      choice = parseInt(prompt("Vui lòng chọn một thức uống (1-7):"));
+
+      if (choice >= 1 && choice <= 6) {
+          let quantity = parseInt(prompt("Vui lòng nhập số lượng:"));
+          let price = menu[choice].price;
+          total += price * quantity;
+          document.write("Bạn đã chọn :"+menu[choice].name, "</br> số lượng:" +quantity + "</br> giá:"+price+" đồng.");
+      } else if (choice === 7) {
+          document.write("</br> Tổng số tiền bạn cần phải trả là: "+total +"đồng.");
+      } else {
+          document.write("</br> Lựa chọn không hợp lệ. Vui lòng chọn lại.");
+      }
+  } while (choice !== 7);
+
+
+</script>
+</body>
+</html>

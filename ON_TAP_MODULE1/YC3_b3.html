@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var numerators = [5, 2, 5];
+    var denominators = [6, 3, 4];
+    var maxInndexFraction=0;
+    var maxFraction=numerators[0]/denominators[0];
+    for(let i=0;i<denominators.length;i++){
+        var Fraction=numerators[i]/denominators[i];
+        if(maxFraction<Fraction){
+            maxInndexFraction=i;
+            maxFraction=Fraction;
+        }
+    }
+    document.write("=>"+numerators[maxInndexFraction]+"/"+denominators[maxInndexFraction]+" la phan so lon nhat" + " co chi so la"+ maxInndexFraction );
+</script>
+</body>
+</html>

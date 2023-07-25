@@ -6,17 +6,21 @@
 </head>
 <body>
 <script>
-    var a=[7,2,5,3,5,3];
-    var b=[7,2,5,4,6,3,5,3];
-    var c=[];
-    var seen=b.includes(a);
-    for(let i=0;i<b.length;i++){
-        if(seen){
-            c.push(seen);
-            c.sort((a1,b1)=>a1-b1);
-        }
+    function missingValue(A, B) {
+        // Tạo một Set chứa các phần tử trong mảng A
+        const setA = new Set(A);
+
+        // Sử dụng filter để lọc ra các phần tử trong mảng B không có trong mảng A
+        const result = B.filter((element) => !setA.has(element));
+        result.sort((a,b)=>a-b);
+        return result;
     }
-    document.write(c);
+    const A = [7, 2, 5, 3, 5, 3];
+    const B = [7, 9, 5, 4, 6, 3, 5, 3];
+
+    const missingValues = missingValue(A, B);
+    document.write(missingValues);
+
 </script>
 </body>
 </html>
