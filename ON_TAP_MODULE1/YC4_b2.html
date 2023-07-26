@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function demSoLuongKyTuKhacNhau(str) {
+        var count=0;
+        for(let i=0;i<str.length;i++){
+            if(str[0]!=str[i]){
+                count++;
+            }
+        }
+        return count;
+
+    }
+    let kiTu =prompt("Nhap vao chuoi ky tu");
+    document.write("So ki tu khac nhau trong xau la:"+demSoLuongKyTuKhacNhau(kiTu));
+</script>
+</body>
+</html>
