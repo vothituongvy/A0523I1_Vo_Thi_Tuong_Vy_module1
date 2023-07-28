@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="createHV()">Tạo học viên mới</button>
+<button onclick="updateHV()">Sửa</button>
+<button onclick="Delete()">Xóa</button>
+<div>
+   <table>
+       <tr><td><label for="masinhvien"> Mã Sinh Viên</label></td>
+           <td><input type="text" id="masinhvien" pattern="[A-Za-z]{2}\d{4}"></td></tr>
+    <tr><td><label for="tensinhvien">Tên Sinh Viên</label></td>
+    <td><input type="text" id="tensinhvien" maxlength="50"></td></tr>
+    <tr>
+        <td><label for="lop">Lớp</label></td>
+        <td><input type="text" id="lop"></td>
+    </tr>
+    <tr><td><label for="email">Email</label></td>
+        <td><input type="text" id="email"></td></tr>
+       <tr><td>
+           <label for="ngaysinh">Ngày sinh</label></td>
+       <td><input type="date" id="ngaysinh"></td></tr>
+       <tr><td><label for="module">Module</label></td>
+           <td><input type="number" id="module" min="1" max="6"></td></tr>
+   </table>
+    <button id="them" onclick="them()">Thêm Mới</button>
+    <button id="luu" onclick="luu()">Lưu</button>
+</div>
+<div id="tableSV">
+    <table border="1">
+        <tbody>
+        <tr>
+            <th>#</th>
+            <th>Mã học viên </th>
+            <th>Tên </th>
+            <th>Lớp </th>
+            <th>Email </th>
+            <th>Ngày Sinh </th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    class SV{
+        constructor(maHV,ten,lop,email,ngaySinh) {
+            this._maHV = maHV;
+            this._ten = ten;
+            this._lop = lop;
+            this._email = email;
+            this._ngaySinh = ngaySinh;
+        }
+
+        get maHV() {
+            return this._maHV;
+        }
+
+        set maHV(value) {
+            this._maHV = value;
+        }
+
+        get ten() {
+            return this._ten;
+        }
+
+        set ten(value) {
+            this._ten = value;
+        }
+
+        get lop() {
+            return this._lop;
+        }
+
+        set lop(value) {
+            this._lop = value;
+        }
+
+        get email() {
+            return this._email;
+        }
+
+        set email(value) {
+            this._email = value;
+        }
+
+        get ngaySinh() {
+            return this._ngaySinh;
+        }
+
+        set ngaySinh(value) {
+            this._ngaySinh = value;
+        }
+    }
+    let HVarr=[];
+    function showHVList(HVList) {
+        let strTable="<table border='1'>";
+        strTable+="<tr>"+"<th>#</th>"+
+        "<th>Mã học viên </th>"+
+        "<th>Tên </th>"+
+        "<th>Lớp </th>"+
+        "<th>Email </th>"+
+        "<th>Ngày Sinh </th>"+"</tr>";
+        for (let i=0;i<HVList.length;i++){
+            strTable+="<tr>"+"<td>"+(i+1)+"</td>"+
+                    "<td>"+HVList[i]._maHV+"</td>"+
+                    "<td>"+HVList[i]._ten+"</td>"+
+                    "<td>"+HVList[i]._lop+"</td>"+
+                    "<td>"+HVList[i]._email+"</td>"+
+                    "<td>"+HVList[i]._ngaySinh+"</td>"+"</tr>"
+        }
+        strTable +="</table>";
+        document.getElementById("tableSV").innerHTML=strTable;
+    }
+    function createHV() {
+        let ten=document.getElementById("tensinhvien").value;
+        let maSV=document.getElementById("masinhvien").value;
+        let lop=document.getElementById("lop").value;
+        let email=document.getElementById("email").value;
+        let ngaySinh=document.getElementById("ngaysinh").value;
+        let newHV=new SV(maSV,ten,lop,email,ngaySinh);
+        HVarr.push(newHV);
+        showHVList(HVarr);
+        document.getElementById("tensinhvien").value="";
+        document.getElementById("masinhvien").value="";
+        document.getElementById("lop").value="";
+        document.getElementById("email").value="";
+        document.getElementById("ngaysinh").value="";
+
+    }
+    let HVupdating;
+    function updateHV() {
+        let tenHV=prompt("Nhap hoc vien can sua");
+        for(i=0;i<HVarr.length;i++){
+            if(HVarr[i].maHV===tenHV){
+                document.getElementById("tensinhvien").value=HVarr[i].ten;
+                document.getElementById("masinhvien").value=HVarr[i].maHV;
+                document.getElementById("lop").value=HVarr[i].lop;
+                document.getElementById("email").value=HVarr[i].email;
+                document.getElementById("ngaysinh").value=HVarr[i].ngaySinh;
+                HVupdating=HVarr[i];
+            }else{
+                alert("MÃ HỌC VIÊN KHÔNG TỒN TẠI");
+            }
+        }
+        updating=true;
+        showBtn();
+    }
+        function showBtn() {
+            if(updating==false){
+                document.getElementById("them").style.display='block';
+                document.getElementById("luu").style.display='none';
+            }else {
+                document.getElementById("them").style.display='none';
+                document.getElementById("luu").style.display='block';
+            }
+        }
+        function Delete() {
+                let tenHV=prompt("Nhap ma hoc vien can xoa");
+                for(i=0;i<HVarr.length;i++){
+                    if(HVarr[i].maHV===tenHV){
+                       HVarr.splice(i,1);
+                    }else{
+                        alert("MÃ HỌC VIÊN KHÔNG TỒN TẠI");
+                    }
+                }
+                showHVList(HVarr);
+        }
+</script>
+</body>
+</html>
